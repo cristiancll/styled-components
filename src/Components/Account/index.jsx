@@ -1,8 +1,14 @@
-import React, { useState } from "react";
-
+import React, {useState} from "react";
+import styled from "styled-components";
 import privateImg from "../../assets/images/private.svg";
 import eyeImg from "../../assets/images/eye.svg";
 import moneyImg from "../../assets/images/money.svg";
+import {Balance, Box, Button, Detail, Icon} from "../UI";
+
+const IconMargin = styled(Icon)`
+  marginTop: "2px";
+`;
+
 
 const Account = () => {
   const [toggleState, untoggle] = useState(true);
@@ -12,29 +18,27 @@ const Account = () => {
   };
 
   return (
-    <div className="box">
+    <Box>
       <h2>Conta</h2>
-      <div style={{ fontSize: "26px", padding: "20px 0" }}>
+      <div style={{fontSize: "26px", padding: "20px 0"}}>
         Saldo disponível{" "}
         <span>
-          <img className="icon_image" src={moneyImg} alt="Ícone Saldo" />
+          <Icon src={moneyImg} alt="Ícone Saldo"/>
         </span>
         {toggleState ? (
-          <div className="balance">
-            <span className="detail">R$</span> 0,00{" "}
-          </div>
+          <Balance>
+            <Detail>R$</Detail> 0,00{" "}
+          </Balance>
         ) : null}
       </div>
 
-      <button className="button" onClick={toggleHandler}>
-        <img
-          style={{ marginTop: "2px" }}
-          className="icon_image"
+      <Button onClick={toggleHandler}>
+        <IconMargin
           src={toggleState ? privateImg : eyeImg}
           alt="Privacidade do Saldo"
         />
-      </button>
-    </div>
+      </Button>
+    </Box>
   );
 };
 
