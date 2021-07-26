@@ -5,15 +5,15 @@ import others from "../assets/images/others.svg"
 import health from "../assets/images/health.svg"
 import transport from "../assets/images/transport.svg"
 import utilities from "../assets/images/utilities.svg"
-import {Icon} from "./UI";
+import {IconTheme} from "./UI";
 
 export default (type) => {
   const Images = {
-    Food: <Icon src={food} alt="Alimentação"/>,
-    Health: <Icon src={health} alt="Saúde"/>,
-    Transport: <Icon src={transport} alt="Transporte"/>,
-    Utilities: <Icon src={utilities} alt="Utilidades"/>,
-    Others: <Icon src={others} alt="Outros"/>
+    Food: <IconTheme src={food} alt="Alimentação"/>,
+    Health: <IconTheme src={health} alt="Saúde"/>,
+    Transport: <IconTheme src={transport} alt="Transporte"/>,
+    Utilities: <IconTheme src={utilities} alt="Utilidades"/>,
+    Others: <IconTheme src={others} alt="Outros"/>
   };
   return Images[type] || Images.Others;
 }
