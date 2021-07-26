@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Title from "../Title";
 import Account from "../Account";
+import Statement from "../Statement";
 
 const Container = styled.div`
   background-color: #f1f1f1;
@@ -24,6 +25,7 @@ export default () => {
       <Title>Olá Fulano!</Title>
       <Content>
         <Account/>
+        <Statement/>
       </Content>
     </Container>
   );
